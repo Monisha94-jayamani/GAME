@@ -70,7 +70,10 @@ function gameBoard() {
       console.log(s.join("") == a.join(""));
     }
     //to create a span to display user input---1
-    var z1 = document.createElement("span");
+    //document.getElementById("myText").value = "Johnny Bravo";
+    var z1 = document.createElement("input");
+    z1.setAttribute("id", "number1");
+    z1.setAttribute("color", "white");
     z1.style.borderRadius = "50%";
     z1.style.height = "25px";
     z1.style.width = "25px";
@@ -82,15 +85,19 @@ function gameBoard() {
     } else if (a.includes(s[0])) {
       z1.style.backgroundColor = "orange";
     } else {
-      z1.style.backgroundColor = "black";
+      z1.style.backgroundColor = "red";
+      z1.setAttribute("color", "white");
     }
     z1.style.borderRadius = "50%";
-    var z11 = document.createTextNode(s[0]);
-    z1.appendChild(z11);
+    z1.setAttribute("value", s[0]);
+
+    //  z1.appendChild(z11);
     document.body.appendChild(z1);
     document.getElementById("userid").value = "";
     //to create a span to display user input----2
-    var z2 = document.createElement("span");
+    var z2 = document.createElement("input");
+    z2.setAttribute("id", "number2");
+    z2.setAttribute("color", "white");
     z2.style.borderRadius = "50%";
     z2.style.height = "25px";
     z2.style.width = "25px";
@@ -99,45 +106,47 @@ function gameBoard() {
     } else if (a.includes(s[1])) {
       z2.style.backgroundColor = "orange";
     } else {
-      z2.style.backgroundColor = "black";
+      z2.style.backgroundColor = "red";
+      z2.setAttribute("color", "white");
     }
     z2.style.borderRadius = "50%";
-    var z12 = document.createTextNode(s[1]);
-    z2.appendChild(z12);
+    z2.setAttribute("value", s[1]);
     document.body.appendChild(z2);
     //to create a span to display user input----3
-    var z3 = document.createElement("span");
+    var z3 = document.createElement("input");
+    z3.setAttribute("id", "number3");
+    z3.setAttribute("color", "white");
     z3.style.borderRadius = "50%";
     z3.style.height = "25px";
     z3.style.width = "25px";
-    console.log("2", a[2], s[2]);
     if (a[2] == s[2]) {
       z3.style.backgroundColor = "green";
-    } else if (a.includes(s[2])) {
+    } else if (a.includes(s[1])) {
       z3.style.backgroundColor = "orange";
     } else {
-      z3.style.backgroundColor = "black";
+      z3.style.backgroundColor = "red";
+      z3.setAttribute("color", "white");
     }
     z3.style.borderRadius = "50%";
-    var z13 = document.createTextNode(s[2]);
-    z3.appendChild(z13);
+    z3.setAttribute("value", s[2]);
     document.body.appendChild(z3);
     //to create a span to display user input----4
-    var z4 = document.createElement("span");
+    var z4 = document.createElement("input");
+    z4.setAttribute("id", "number4");
+    z4.setAttribute("color", "white");
     z4.style.borderRadius = "50%";
     z4.style.height = "25px";
     z4.style.width = "25px";
-    console.log("3", a[3], s[3]);
     if (a[3] == s[3]) {
       z4.style.backgroundColor = "green";
     } else if (a.includes(s[3])) {
       z4.style.backgroundColor = "orange";
     } else {
-      z4.style.backgroundColor = "black";
+      z4.style.backgroundColor = "red";
+      z4.setAttribute("color", "white");
     }
     z4.style.borderRadius = "50%";
-    var z14 = document.createTextNode(s[3]);
-    z4.appendChild(z14);
+    z4.setAttribute("value", s[3]);
     document.body.appendChild(z4);
     z1, z2, z3, z4.setAttribute("display", "inline-block");
     s = "";
