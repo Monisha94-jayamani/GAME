@@ -1,7 +1,7 @@
 //To create a header to diaplay for game
 document.getElementById("root").style.textAlign = "center";
 var header = document.createElement("h1");
-var textnode = document.createTextNode("Hey lets play");
+var textnode = document.createTextNode("Number guessing game......let's play");
 header.appendChild(textnode);
 document.getElementById("root").appendChild(header);
 //To create a start button
@@ -19,7 +19,7 @@ var u = [];
 for (var i = a.length; i <= 4; i++) {
   var r = Math.floor(Math.random() * 10);
   var n = a.includes(r.toString());
-  // console.log(n,r);
+   console.log("number",n,r);
   if (n.toString() == "false") {
     a.push(r.toString());
     //console.log(a);
@@ -60,13 +60,21 @@ function gameBoard() {
   //when user submit the button to get the value from
   function enterbutton() {
     var uservalue = document.getElementById("userid").value;
+    if(uservalue.length!==4)
+    {
+      alert("kindly enter 4 digit number")
+    }
+    else
+    {
     u.push(uservalue);
     console.log(u);
     // var m = u.map((value, index) => {
     var s = uservalue.toString().split("");
     console.log(s);
     if (s.join("") == a.join("")) {
-      alert("You win a game");
+      var scorce = 5 - u.length;
+      console.log("scorce",scorce)
+      alert("You win a game"+"scorce is"+scorce);
       console.log(s.join("") == a.join(""));
     }
     //to create a span to display user input---1
@@ -121,7 +129,7 @@ function gameBoard() {
     z3.style.width = "25px";
     if (a[2] == s[2]) {
       z3.style.backgroundColor = "green";
-    } else if (a.includes(s[1])) {
+    } else if (a.includes(s[2])) {
       z3.style.backgroundColor = "orange";
     } else {
       z3.style.backgroundColor = "red";
@@ -158,9 +166,15 @@ function gameBoard() {
       submit.onclick = "disable";
       //to calculate the scorce
       var scorce = 5 - u.length;
-      alert("game is over your scorce is" + scorce);
+      console.log("scorce is"+scorce)
+      var s= document.createElement("h4");
+      var text = document.createTextNode("your scorce is"+ scorce);
+      s.appendChild(text);
+      document.getElementById("root").appendChild(s);
+      alert("game is over your");
     }
   }
+}
   document.getElementById("enters").onclick = enterbutton;
 }
 start.onclick = gameBoard;
