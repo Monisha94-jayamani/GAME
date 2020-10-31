@@ -74,7 +74,15 @@ function gameBoard() {
     if (s.join("") == a.join("")) {
       var scorce = 5 - u.length;
       console.log("scorce",scorce)
-      alert("You win a game"+"scorce is"+scorce);
+      submit.onclick = "disable";
+      alert("You win a game");
+      //to calculate the scorce
+      var scorce = 6 - u.length;
+      console.log("scorce is"+scorce)
+      var s1= document.createElement("h4");
+      var text1 = document.createTextNode("your scorce is"+ scorce);
+      s1.appendChild(text1);
+      document.getElementById("root").appendChild(s1);
       console.log(s.join("") == a.join(""));
     }
     //to create a span to display user input---1
@@ -165,7 +173,7 @@ function gameBoard() {
     if (u.length == 5) {
       submit.onclick = "disable";
       //to calculate the scorce
-      var scorce = 5 - u.length;
+      var scorce = 6 - u.length;
       console.log("scorce is"+scorce)
       var s= document.createElement("h4");
       var text = document.createTextNode("your scorce is"+ scorce);
@@ -173,8 +181,10 @@ function gameBoard() {
       document.getElementById("root").appendChild(s);
       alert("game is over your");
     }
+
   }
 }
+
   document.getElementById("enters").onclick = enterbutton;
 }
 start.onclick = gameBoard;
