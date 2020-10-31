@@ -76,14 +76,18 @@ function gameBoard() {
       console.log("scorce",scorce)
       submit.onclick = "disable";
       alert("You win a game");
-      //to calculate the scorce
+      
+      console.log(s.join("") == a.join(""));
+    }
+    if(s.join("")==a.join("") && u.length!==5)
+    {
+        //to calculate the scorce
       var scorce = 6 - u.length;
       console.log("scorce is"+scorce)
       var s1= document.createElement("h4");
       var text1 = document.createTextNode("your scorce is"+ scorce);
       s1.appendChild(text1);
       document.getElementById("root").appendChild(s1);
-      console.log(s.join("") == a.join(""));
     }
     //to create a span to display user input---1
     //document.getElementById("myText").value = "Johnny Bravo";
